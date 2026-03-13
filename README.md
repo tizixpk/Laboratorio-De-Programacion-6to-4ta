@@ -1,2 +1,7 @@
-# Laboratorio-De-Programacion-6to-4ta
-Este repositorio contiene una serie de proyectos y ejercicios pedidos. Cada carpeta o archivo está bien documentado para facilitar su comprensión y uso. 
+# Laboratorio De Programacion 6º4ª - Tiziano Pirez
+
+Bienvenido al repositorio de mis trabajos de 2026
+
+## Contenido
+
+- [ Diagnostico ](/Diagnostico)
