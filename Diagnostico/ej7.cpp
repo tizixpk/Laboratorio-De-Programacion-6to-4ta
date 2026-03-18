@@ -8,7 +8,7 @@ int main() {
        v[i] = v[i] * 10;
     }
      for (int i=0; i < 10; i++) {
-        cout<< "fila" << i << v[i] << endl;
+        cout<< "posicion" << i << v[i] << endl;
      }
     return 0;
 }
