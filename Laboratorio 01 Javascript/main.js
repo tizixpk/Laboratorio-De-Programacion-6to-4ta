@@ -32,4 +32,14 @@ else  {
 }
 let a = 5;
 sumar(a);
+
+Ejercicio 5:
+function mayuscula(texto) {
+  return texto.toUpperCase();
+}
+const resultado = mayuscula("hola mundo");
+console.log(resultado);
+
+Ejercicio 6:
+
 */
