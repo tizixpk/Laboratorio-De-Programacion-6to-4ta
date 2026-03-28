@@ -41,5 +41,13 @@ const resultado = mayuscula("hola mundo");
 console.log(resultado);
 
 Ejercicio 6:
+function  vec(arr) {
+  return arr[0];
+}
+let v = [1, 2, 3];
+console.log(vec(v)); 
+
+Ejercicio 7:
+
 
 */
