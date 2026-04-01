@@ -78,6 +78,68 @@ console.log("Tipo original:", typeof stringBooleano_ej);
 console.log("Valor convertido:", resultado4);
 console.log("Tipo convertido:", typeof resultado4);
 
-Ejercicio 9:
+//ejercicio 8
+function  Elementosdelvector(arr) {
+  return arr.length;
+}
+let vector = [4,5,67,8,65,4,5];
+console.log(Elementosdelvector(vector));   
+
+// ejercicio 9
+function  convertibilidad(cadena1, cadena2) {
+  return cadena1 + cadena2;
+}
+console.log(convertibilidad("Hola ", "Mundo"));   
+
+ // ejercicio 10
+function  tipodedato(dato) {
+  return console.log(typeof(dato));
+}
+let booleano = true;
+tipodedato(booleano);    
+
+// ejercicio 11
+function  ejercicio11(dato2) {
+let booleano2 = true;
+typeof(dato2);
+ if (dato2 ==  null || dato2 == undefined ) {
+    booleano2 = false;
+    return console.log(booleano2);
+ }else {
+    return booleano2;
+ }
+}
+ejercicio11(null);  
+
+// ejercicio 12: 
+function  ejercicio12(array2) {
+  let temp = array2;
+  return console.log(typeof(temp.length));
+}
+let vector12 = [ 1,2,3,4,"hola"];
+ejercicio12(vector12);  
+
+// ejercicio 13:
+dia_actual = prompt ( " ingresa la fecha actual : (día)");
+mes_actual = prompt ( " ingresa la fecha actual : (mes)");
+año_actual = prompt ( " ingresa la fecha actual : (año)");
+usuario = prompt("ahora ingresa su nombre");
+dia_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (dia) ");
+mes_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (mes) ");
+año_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (año) ");
+edad = ( año_actual - año_cumple);
+if ( mes_actual < mes_cumple || mes_actual && dia_actual < dia_cumple ) {
+    edad = edad - 1;
+}
+alert(usuario && edad);
+repetir = prompt ( "pon 1 para repetir o 2 para finalizar");
+if ( repetir == 1 ) {
+usuario = prompt("ok ingresa su nombre");
+dia_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (dia) ");
+mes_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (mes) ");
+año_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (año) ");
+edad = ( año_actual - año_cumple);
+alert(usuario && edad);
+} 
 
 */
