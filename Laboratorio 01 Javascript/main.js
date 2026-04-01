@@ -1,9 +1,9 @@
-/*
-https://profeleguizanicolas.github.io/JavaScript---Introduccion/
-Ejercicio 1:
+// Ejercicio 1:
+
 console.log("hola");
 
-Ejercicio 2:
+// Ejercicio 2:
+
 let numero = 15;
 let booleano = true;
 let underfined;
@@ -16,13 +16,15 @@ console.log(typeof underfined);
 console.log(typeof null1);
 console.log(typeof String);
 
-Ejercicio 3:
+//Ejercicio 3:
+
 function sumar (a,b) {
 return a + b;
 }
 console.log(typeof sumar)
 
-Ejercicio 4:
+//Ejercicio 4:
+
 function sumar (a) {
 if (typeof(a) == "number" ) {
      console.log(true);
@@ -34,21 +36,24 @@ else  {
 let a = 5;
 sumar(a);
 
-Ejercicio 5:
+//Ejercicio 5:
+
 function mayuscula(texto) {
   return texto.toUpperCase();
 }
 const resultado = mayuscula("hola mundo");
 console.log(resultado);
 
-Ejercicio 6:
+//Ejercicio 6:
+
 function  vec(arr) {
   return arr[0];
 }
 let v = [1, 2, 3];
 console.log(vec(v)); 
 
-Ejercicio 7:
+//Ejercicio 7:
+
 function convertirStringANumero(valor) { return Number(valor) }
 function convertirNumeroAString(valor) { return String(valor) }
 function convertirBooleanoAString(valor) { return String(valor) }
@@ -79,6 +84,7 @@ console.log("Valor convertido:", resultado4);
 console.log("Tipo convertido:", typeof resultado4);
 
 //ejercicio 8
+
 function  Elementosdelvector(arr) {
   return arr.length;
 }
