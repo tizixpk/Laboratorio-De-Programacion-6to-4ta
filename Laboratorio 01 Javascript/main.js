@@ -102,7 +102,7 @@ function tipodedato(dato) {
     return typeof dato;
 }
 let booleano = true;
-tipodedato(booleano);    
+console.log(tipodedato(booleano)); 
 
 // ejercicio 11
 function ejercicio11(dato2) {
