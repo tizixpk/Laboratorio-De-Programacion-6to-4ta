@@ -118,6 +118,7 @@ typeof(dato2);
 ejercicio11(null);  
 
 // ejercicio 12: 
+
 function  ejercicio12(array2) {
   let temp = array2;
   return console.log(typeof(temp.length));
@@ -126,6 +127,7 @@ let vector12 = [ 1,2,3,4,"hola"];
 ejercicio12(vector12);  
 
 // ejercicio 13:
+
 dia_actual = prompt ( " ingresa la fecha actual : (día)");
 mes_actual = prompt ( " ingresa la fecha actual : (mes)");
 año_actual = prompt ( " ingresa la fecha actual : (año)");
@@ -148,4 +150,39 @@ edad = ( año_actual - año_cumple);
 alert(usuario && edad);
 } 
 
-*/
+
+// ejercicio 14: 
+
+let contraseña = "";
+function validacion() {
+  let intentos = 0;
+  while (intentos < 4) {
+    let clave = prompt("ingrese una contraseña de 4 dígitos:");
+    if (clave.length == 4 && !isNaN(clave)) {       // -------> !isNaN(clave) = “ES un número” -> true , si no es, false
+      contraseña = clave;
+      alert("guardada");
+      return;
+    } else {
+      intentos++;
+      alert("error, Intento " + intentos);
+    }
+  }
+  alert("sin intentos");
+}
+function login() {
+  let intentos = 0;
+  while (intentos < 4) {
+    let ingreso = prompt("Ingrese la contraseña:");
+    if (ingreso === contraseña) {
+      alert("Acceso exitoso");
+      return;
+    } else {
+      intentos++;
+      alert("Incorrecta. Intento " + intentos);
+    }
+  }
+
+  alert("Acceso bloqueado");
+}
+validacion();
+login();
