@@ -8,13 +8,13 @@ let numero = 15;
 let booleano = true;
 let underfined;
 let null1 = null;
-let String = "hola";
+let texto = "hola";
 console.log("hola"/2);
 console.log(typeof numero);
 console.log(typeof booleano);
 console.log(typeof underfined);
 console.log(typeof null1);
-console.log(typeof String);
+console.log(typeof texto);
 
 //Ejercicio 3:
 
