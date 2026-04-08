@@ -105,18 +105,14 @@ let booleano = true;
 tipodedato(booleano);    
 
 // ejercicio 11
-function  ejercicio11(dato2) {
-let booleano2 = true;
-typeof(dato2);
- function ejercicio11(dato2) {
+function ejercicio11(dato2) {
     if (dato2 === null || dato2 === undefined) {
         return false;
     } else {
         return true;
     }
 }
-}
-ejercicio11(null);  
+console.log(ejercicio11(null));
 
 // ejercicio 12: 
 
