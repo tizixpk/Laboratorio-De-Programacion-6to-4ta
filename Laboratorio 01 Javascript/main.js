@@ -8,8 +8,8 @@ let numero = 15;
 let booleano = true;
 let underfined;
 let null1 = null;
+let String = "hola";
 console.log("hola"/2);
-String(100);
 console.log(typeof numero);
 console.log(typeof booleano);
 console.log(typeof underfined);
@@ -27,10 +27,10 @@ console.log(typeof sumar)
 
 function sumar (a) {
 if (typeof(a) == "number" ) {
-     console.log(true);
+     return true;
 }
 else  {
-    console.log(false);
+    return false;
 }
 }
 let a = 5;
@@ -98,8 +98,8 @@ function  convertibilidad(cadena1, cadena2) {
 console.log(convertibilidad("Hola ", "Mundo"));   
 
  // ejercicio 10
-function  tipodedato(dato) {
-  return console.log(typeof(dato));
+function tipodedato(dato) {
+    return typeof dato;
 }
 let booleano = true;
 tipodedato(booleano);    
@@ -108,12 +108,13 @@ tipodedato(booleano);
 function  ejercicio11(dato2) {
 let booleano2 = true;
 typeof(dato2);
- if (dato2 ==  null || dato2 == undefined ) {
-    booleano2 = false;
-    return console.log(booleano2);
- }else {
-    return booleano2;
- }
+ function ejercicio11(dato2) {
+    if (dato2 === null || dato2 === undefined) {
+        return false;
+    } else {
+        return true;
+    }
+}
 }
 ejercicio11(null);  
 
@@ -128,27 +129,22 @@ ejercicio12(vector12);
 
 // ejercicio 13:
 
-dia_actual = prompt ( " ingresa la fecha actual : (día)");
-mes_actual = prompt ( " ingresa la fecha actual : (mes)");
-año_actual = prompt ( " ingresa la fecha actual : (año)");
-usuario = prompt("ahora ingresa su nombre");
-dia_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (dia) ");
-mes_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (mes) ");
-año_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (año) ");
-edad = ( año_actual - año_cumple);
-if ( mes_actual < mes_cumple || mes_actual && dia_actual < dia_cumple ) {
-    edad = edad - 1;
+let dia_actual = parseInt(prompt("día actual"));
+let mes_actual = parseInt(prompt("mes actual"));
+let año_actual = parseInt(prompt("año actual"));
+let repetir = "si";
+while (repetir === "si") {
+    let usuario = prompt("Nombre");
+    let dia_cumple = parseInt(prompt("día nacimiento"));
+    let mes_cumple = parseInt(prompt("mes nacimiento"));
+    let año_cumple = parseInt(prompt("año nacimiento"));
+    let edad = año_actual - año_cumple;
+    if (mes_actual < mes_cumple || (mes_actual === mes_cumple && dia_actual < dia_cumple)) {
+        edad--;
+    }
+    alert(usuario + " tiene " + edad + " años");
+    repetir = prompt("desea continuar???");
 }
-alert(usuario && edad);
-repetir = prompt ( "pon 1 para repetir o 2 para finalizar");
-if ( repetir == 1 ) {
-usuario = prompt("ok ingresa su nombre");
-dia_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (dia) ");
-mes_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (mes) ");
-año_cumple = prompt ( " ahora ingresa su fecha d nacimiento: (año) ");
-edad = ( año_actual - año_cumple);
-alert(usuario && edad);
-} 
 
 
 // ejercicio 14: 
