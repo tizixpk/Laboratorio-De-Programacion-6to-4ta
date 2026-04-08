@@ -116,12 +116,15 @@ console.log(ejercicio11(null));
 
 // ejercicio 12: 
 
-function  ejercicio12(array2) {
-  let temp = array2;
-  return console.log(typeof(temp.length));
+function ejercicio12(array2) {
+  let resultado = [];
+  for (let i = 0; i < array2.length; i++) {
+    resultado.push(typeof array2[i]);
+  }
+  return resultado;
 }
-let vector12 = [ 1,2,3,4,"hola"];
-ejercicio12(vector12);  
+let vector12 = [1, 2, 3, 4, "hola"];
+console.log(ejercicio12(vector12));
 
 // ejercicio 13:
 
