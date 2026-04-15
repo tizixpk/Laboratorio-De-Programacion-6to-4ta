@@ -54,5 +54,8 @@ function valor_inventario(productosss2) {
     return valor_inventario;
     }
 console.log("valor inventario:", valor_inventario(productosss2));
-//Crear una función que retorne el objeto correspondiente al producto más caro.
     
+//Crear una función que retorne el objeto correspondiente al producto más caro.
+function producto_caro(productosss3) {
+
+    }
