@@ -45,11 +45,9 @@ console.log(productossinvalor(productos));
 
 //Calcular el valor total del inventario usando la fórmula : precio * stock
 function valor_inventario(productosss2) {
-  productosss2 = [
-    { nombre: "Mouse", categoria: "tecnologia", precio: 1000, stock: 10 },  { nombre: "Teclado", categoria: "tecnologia", precio: 2000, stock: 5 } ];
     let valor_inventario = 0;
   for (let i = 0; i < productosss2.length; i++) {
-        valor_inventario+= (productosss[i].stock * productosss[i].precio)
+        valor_inventario+= (productosss2[i].stock * productosss2[i].precio)
         }
     return valor_inventario;
     }
