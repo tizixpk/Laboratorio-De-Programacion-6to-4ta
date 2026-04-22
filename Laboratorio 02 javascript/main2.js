@@ -37,7 +37,7 @@ function productossinvalor(productosss) {
     let j = 0;
     for (let i = 0; i < productos.length; i++) {
         if (productosss[i].stock === 0) {
-            productos_sinstock[i] = productosss[i];
+            producto_sinstock[i] = productosss[i];
             j++; 
         }
     }
@@ -57,5 +57,13 @@ console.log("valor inventario:", valor_inventario(productosss2));
     
 //Crear una función que retorne el objeto correspondiente al producto más caro.
 function producto_caro(productosss3) {
-
+    if (productosss3.length === 0) return null;
+    let masCaro = productosss3[0];
+    for (let i = 1; i < productosss3.length; i++) {
+        if (productosss3[i].precio > masCaro.precio) {
+            masCaro = productosss3[i];
+        }
     }
+    return masCaro;
+}
+console.log("Producto mas caro:", producto_caro(productos));
