@@ -35,10 +35,10 @@ console.log(productosxcategoria(productos, "tecnologia"));
 function productossinvalor(productosss) {
     let producto_sinstock = [];
     let j = 0;
-    for (let i = 0; i < productos.length; i++) {
+    for (let i = 0; i < productosss.length; i++) {
         if (productosss[i].stock === 0) {
             producto_sinstock[i] = productosss[i];
-            j++; 
+            i++; 
         }
     }
 console.log(productossinvalor(productos));
