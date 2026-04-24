@@ -6,62 +6,64 @@ const productos = [
     { nombre: "Silla", categoria: "hogar", precio: 15000, stock: 2 }
 ];
 
-
-//Crear una función que reciba un array de productos y devuelva un nuevo array con solo nombres.
-function nombresProductos(lista_de_productos_ejemplo) {
+// Crear una función que reciba un array de productos y devuelva un nuevo array con solo nombres.
+function nombresproductos(lista) {
     let nombres = []; 
-    for (let i = 0; i < lista_de_productos_ejemplo.length; i++) {
-        nombres[i] = lista_de_productos_ejemplo[i].nombre;
+    for (let i = 0; i < lista.length; i++) {
+        nombres[i] = lista[i].nombre;
     }
     return nombres;
 }
-console.log(nombresProductos(productos));
+console.log(nombresproductos(productos));
 
 //Crear una función que retorne los productos de una categoría dada.
-function productosxcategoria(listaproductos, categoria) {
-    let productoss = [];
+function productosxcategoria(lista, categoria) {
+    let resultado = [];
     let j = 0;
-    for (let i = 0; i < listaproductos.length; i++) {
-        if (listaproductos[i].categoria === categoria) {
-            productoss[j] = listaproductos[i];
-            j++; 
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i].categoria === categoria) {
+            resultado[j] = lista[i];
+            j++;
         }
     }
-    return productoss;
+    return resultado;
 }
 console.log(productosxcategoria(productos, "tecnologia"));
 
 //Crear una función que retorne los productos cuyo stock sea igual a 0.
-function productossinvalor(productosss) {
-    let producto_sinstock = [];
+function productossinvalor(lista) {
+    let resultado = [];
     let j = 0;
-    for (let i = 0; i < productosss.length; i++) {
-        if (productosss[i].stock === 0) {
-            producto_sinstock[i] = productosss[i];
-            i++; 
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i].stock === 0) {
+            resultado[j] = lista[i];
+            j++;
         }
     }
+    return resultado;
+}
 console.log(productossinvalor(productos));
 
-//Calcular el valor total del inventario usando la fórmula : precio * stock
-function valor_inventario(productosss2) {
-    let valor_inventario = 0;
-  for (let i = 0; i < productosss2.length; i++) {
-        valor_inventario+= (productosss2[i].stock * productosss2[i].precio)
-        }
-    return valor_inventario;
+// Calcular el valor total del inventario usando la fórmula : precio * stock
+function valor_inventario(lista) {
+    let total = 0;
+    for (let i = 0; i < lista.length; i++) {
+        total += lista[i].stock * lista[i].precio;
     }
-console.log("valor inventario:", valor_inventario(productosss2));
-    
+    return total;
+}
+console.log("valor inventario:", valor_inventario(productos));
+
 //Crear una función que retorne el objeto correspondiente al producto más caro.
-function producto_caro(productosss3) {
-    if (productosss3.length === 0) return null;
-    let masCaro = productosss3[0];
-    for (let i = 1; i < productosss3.length; i++) {
-        if (productosss3[i].precio > masCaro.precio) {
-            masCaro = productosss3[i];
+function producto_caro(lista) {
+    if (lista.length === 0) return null;
+
+    let masCaro = lista[0];
+    for (let i = 1; i < lista.length; i++) {
+        if (lista[i].precio > masCaro.precio) {
+            masCaro = lista[i];
         }
     }
     return masCaro;
 }
-console.log("Producto mas caro:", producto_caro(productos));
+console.log("producto mas caro:", producto_caro(productos));
