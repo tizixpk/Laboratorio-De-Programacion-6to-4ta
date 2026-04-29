@@ -1,16 +1,77 @@
+
+const productos = [
+{nombre: "Mouse", categoria: "tecnologia", precio: 1000, stock: 10 },
+{nombre: "Teclado", categoria: "tecnologia", precio: 2000, stock: 5 },
+{nombre: "Monitor", categoria: "tecnologia", precio: 50000, stock: 0 },
+{nombre: "Silla", categoria: "hogar", precio: 15000, stock: 2 }
+];
+
+    function agregarProducto(temp) {
+        let nombreProducto = prompt("nombre del producto?");
+        let categoriaProducto = prompt("categoría?");
+        let precioProducto = Number(prompt("precio?"));
+        let stockProducto = Number(prompt("stock?"));
+        temp[temp.length] = {
+            nombre: nombreProducto, 
+            categoria: categoriaProducto, 
+            precio: precioProducto, 
+            stock: stockProducto
+        };
+        console.log("producto agregado");
+    }
+
+    function eliminarProducto(temp) {
+        let indice = Number(prompt("ingresa el indice del producto a eliminar"));
+        delete temp[indice];
+    }
+
+    function modificarProducto(temp) {
+        let indice = Number(prompt("ingresa el indice del producto a modificar"));
+        console.log(temp[indice]);
+        let si = prompt ("deseas modificarlo?");
+        if ( si === "si") {
+            let nombreProductomod = prompt("nombre del producto?");
+            let categoriaProductomod = prompt("categoría?");
+            let precioProductomod = Number(prompt("precio?"));
+            let stockProductomod = Number(prompt("stock?"));
+            temp[indice] = {
+                nombre: nombreProductomod, 
+                categoria: categoriaProductomod, 
+                precio: precioProductomod, 
+                stock: stockProductomod,
+            };
+        }
+        return console.log ("listo");
+    }
+
+    function mostrarProducto(temp) {
+        for (let i = 0; i < temp.length; i++) {
+            console.table(temp[i]);
+        } 
+        return 0;
+    }
+    let op; 
 do {
-console.log ("----- menu ----- ");
-console.log ("1. Agregar producto ");
-console.log ("2. Eliminar producto ");
-console.log ("3. Modificar producto ");
-console.log ("4. mostrar producto y salir ");
-Opcion = parseInt(prompt("ingresa:"));
-switch (opcion) {
-    case 1:
-        producto.nombre = parseInt(prompt("ingresa el producto"));
-        producto.categoria = parseInt(prompt("ingresa su categoria"));
-        producto.precio = parseInt(prompt("ingresa el precio"));
-        producto.precio = parseInt(prompt("ingresa el stock"));
-        let obj
-}
-}while(Opcion!==4);
+    op = prompt("Elige una opción:\n1-Agregar producto\n2-Eliminar producto\n3-Modificar producto\n4-Mostrar productos y salir");
+    switch (op) {
+        case "1":
+            agregarProducto(productos);
+            break;
+        case "2":
+        eliminarProducto(productos);
+        break;
+        case "3":
+            modificarProducto(productos);
+            break;
+        case "4":
+            mostrarProducto(productos);
+        break;
+    
+        default:
+            alert("ingresa una op");
+            break;
+    }
+
+} while (op !== "4");
+console.log("Lista final de productos:");
+console.table(productos);
