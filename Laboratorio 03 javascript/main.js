@@ -6,19 +6,18 @@ const productos = [
 {nombre: "Silla", categoria: "hogar", precio: 15000, stock: 2 }
 ];
 
-    function agregarProducto(temp) {
-        let nombreProducto = prompt("nombre del producto?");
-        let categoriaProducto = prompt("categoría?");
-        let precioProducto = Number(prompt("precio?"));
-        let stockProducto = Number(prompt("stock?"));
-        temp[temp.length] = {
-            nombre: nombreProducto, 
-            categoria: categoriaProducto, 
-            precio: precioProducto, 
-            stock: stockProducto
-        };
-        console.log("producto agregado");
-    }
+  function agregarProducto(temp) {
+    let nombreProducto = prompt("nombre del producto?");
+    let categoriaProducto = prompt("categoría?");
+    let precioProducto = Number(prompt("precio?"));
+    let stockProducto = Number(prompt("stock?"));
+    temp[temp.length] = {};
+    temp[temp.length - 1].nombre = nombreProducto;
+    temp[temp.length - 1].categoria = categoriaProducto;
+    temp[temp.length - 1].precio = precioProducto;
+    temp[temp.length - 1].stock = stockProducto;
+    return console.log("producto agregado");
+}
 
     function eliminarProducto(temp) {
         let indice = Number(prompt("ingresa el indice del producto a eliminar"));
