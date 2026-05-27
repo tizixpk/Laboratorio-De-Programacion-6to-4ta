@@ -46,6 +46,10 @@ function aplicarAumento(temp) {
     return productosActualizados; 
 }
 
+function productoMasCaro(temp) {
+temp.forEach( productos2 => {
+    
+});
 
 }
 
