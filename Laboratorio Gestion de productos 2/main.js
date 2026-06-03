@@ -50,9 +50,7 @@ elimina un producto según el índice ingresado.
 Retorno: devuelve un nuevo array sin el producto eliminado.
 */
 function eliminarProducto(temp) {
-    let indice = Number(
-        prompt("Ingrese el índice del producto a eliminar")
-    );
+    let indice = Number( prompt("Ingrese el índice del producto a eliminar"));
     let nuevoArray = [];
     temp.forEach(function (producto, posicion) {
         if (posicion !== indice) {
