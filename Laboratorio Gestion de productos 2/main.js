@@ -184,7 +184,7 @@ function mostrarProductos(temp) {
 }
 
 /*
-muestra el submenú de opciones adicionales.
+muestra el submenu con mas opciones
 retorno: devuelve el array actualizado.
 */
 function menuExtra(temp) {
