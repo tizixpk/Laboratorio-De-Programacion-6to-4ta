@@ -13,9 +13,9 @@ const productos = [
     { nombre: "Silla", categoria: "hogar", precio: 15000, stock: 2 }
 ];
 
-// Variable  q tendra la versión actualizada de los productos
+// variable  q tendra la versión actualizada de los productos
 let productosActuales = productos;
-// Variable para finalizar el programa
+// variable para finalizar el programa
 let salirPrograma = false;
 
 /*
@@ -270,3 +270,28 @@ do {
 } while (opcion !== "5" && !salirPrograma);
 
 console.log("Programa finalizadooo");
+
+// Preguntas teoricas:
+
+// ¿Qué es la programación funcional?
+// Es un paradigma de programación basado en el uso de funciones 
+// matemáticas puras, evitando cambiar estados compartidos o mutar datos, 
+// centrándose en el "qué" hacer y no en el "cómo".
+
+// ¿Qué significa inmutabilidad en programación?
+// Significa que una vez que un dato (como una variable o un array)
+//  es creado, su valor o estado no puede ser modificado; 
+// para hacer un cambio, se debe crear una copia nueva.
+
+// ¿Como funciona forEach() en JavaScript?
+// Es un método de los arrays que ejecuta 
+// una función (callback) una vez por cada elemento 
+// que contiene el array, siendo útil para iterar pero 
+// sin devolver un array nuevo.
+
+// ¿Qué diferencia existe entre modificar un array original y crear uno nuevo ? 
+// Modificar el original (mutar) altera los datos en memoria,
+//  lo que puede causar errores inesperados en otras partes del código; 
+// crear uno nuevo (inmutabilidad) deja el original intacto, haciendo el 
+// código más seguro y predecible.
++
