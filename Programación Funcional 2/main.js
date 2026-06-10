@@ -62,3 +62,4 @@ console.log(accesoriosBaratos);
 const nombresLargos = productos.filter(producto => producto.nombre.length > 7 );
 console.log("cantidad de instrumentos:", nombresLargos.length);
 console.log(nombresLargos);
+//PUNTO B.4
