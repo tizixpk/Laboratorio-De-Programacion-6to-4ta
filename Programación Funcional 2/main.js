@@ -44,3 +44,4 @@ if ( x < 100 ) {
 });
 console.log(barato);
 console.log(precios);
+//PARTE B.3
