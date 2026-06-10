@@ -59,3 +59,6 @@ console.log(precioInstrumento);
 const accesoriosBaratos = productos.filter(producto => producto.categoria === 'Accesorio' && producto.precio < 5000);
 console.log("cantidad de instrumentos:", accesoriosBaratos.length);
 console.log(accesoriosBaratos);
+const nombresLargos = productos.filter(producto => producto.nombre > 7 );
+console.log("cantidad de instrumentos:", nombresLargos.length);
+console.log(nombresLargos);
