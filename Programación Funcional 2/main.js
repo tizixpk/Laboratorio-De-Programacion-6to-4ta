@@ -50,4 +50,12 @@ const productos = [
   { nombre: 'Batería', categoria: 'Instrumento', precio: 68000 },
   { nombre: 'Micrófono', categoria: 'Accesorio', precio: 7500 },
 ];
-const soloInstrumentos = Productos.filter((productos2) => productos2.length > 6);
+const soloInstrumentos = productos.filter(producto => producto.categoria === 'Instrumento');
+console.log("cantidad de instrumentos:", soloInstrumentos.length);
+console.log(soloInstrumentos);
+const precioInstrumento = productos.filter(producto => producto.precio < 5000 );
+console.log("cantidad de instrumentos:", precioInstrumento.length);
+console.log(precioInstrumento);
+const accesoriosBaratos = productos.filter(producto => producto.categoria === 'Accesorio' && producto.precio < 5000);
+console.log("cantidad de instrumentos:", accesoriosBaratos.length);
+console.log(accesoriosBaratos);
