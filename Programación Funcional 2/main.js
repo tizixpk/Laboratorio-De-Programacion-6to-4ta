@@ -63,3 +63,45 @@ const nombresLargos = productos.filter(producto => producto.nombre.length > 7 );
 console.log("cantidad de instrumentos:", nombresLargos.length);
 console.log(nombresLargos);
 //PUNTO B.4
+const precioTotal = productos.reduce((acc, item) => acc + item.precio, 0);
+console.log('Precio total:', precioTotal);
+const precioPromedio = productos.reduce((acc, item, _, arr) => acc + item.precio / arr.length, 0);
+console.log('Precio promedio:', precioPromedio);
+const precioMaximo = productos.reduce((acc, item) => (item.precio > acc ? item.precio : acc), 0);
+console.log('Precio máximo:', precioMaximo);
+const listaNombres = productos.reduce((acc, item) => [...acc, item.nombre], []);
+console.log('Lista de nombres:', listaNombres);
+const contadorAccesorios = productos.reduce((acc, item) => (item.categoria === 'Accesorio' ? acc + 1 : acc), 0);
+console.log('Contador de accesorios:', contadorAccesorios);
+// PUNTO B.5
+const cuadrado = (n) => n * n;
+const esPar = (n) => n % 2 === 0;
+const mayuscula = (texto) => texto.toUpperCase();
+const formatearPrecio = (precio) => '$' + precio;
+console.log(cuadrado(5));        // 25
+console.log(esPar(4));           // true
+console.log(mayuscula('hola'));  // Hola
+console.log(formatearPrecio(500)); // $500
+// PARTE B
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const cuadrados = numeros.map(cuadrado);
+const preciosFormateados = numeros.map(formatearPrecio);
+const soloPares = numeros.filter(esPar);
+console.log('Cuadrados:', cuadrados);
+console.log('Precios:', preciosFormateados);
+console.log('Solo pares:', soloPares)
+// PARTE B.6
+const album = {
+  id: 1,
+  titulo: 'Abbey Road',
+  precio: 1200,
+  disponible: true
+};
+const albumConDescuento = { ...album, precio: album.precio * 0.9 };
+const albumAgotado = { ...album, disponible: false };
+const albumCompleto = { ...album, anio: 1969 };
+console.log('Original:', album);
+console.log('Con Descuento:', albumConDescuento);
+console.log('Agotado:', albumAgotado);
+console.log('Completo:', albumCompleto);
+console.log('¿El original cambió?:', album); 
