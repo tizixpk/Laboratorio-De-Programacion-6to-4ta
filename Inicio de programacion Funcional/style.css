@@ -1,0 +1,29 @@
+/* EJ 5 */
+#container {
+    background-color: lightblue;
+}
+#container p {
+    color: white;
+}
+
+
+/* EJ 7 */
+.image-container {
+    width: 200px;
+    margin: 10px;
+}
+.image-container img {
+    width: 200px;
+}
+
+
+/* EJ 8 */
+#myTable {
+    border-collapse: collapse;
+}
+#myTable tr,
+#myTable td,
+#myTable th {
+    border: 2px solid black;
+    padding: 8px;
+}
