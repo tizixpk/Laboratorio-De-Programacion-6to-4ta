@@ -1,95 +1,58 @@
-const inputNombre = document.getElementById("nombre");
-const inputNumero = document.getElementById("text");
-const botonBuscar = document.getElementById("bnombre");
-const contenedorImagen = document.querySelector(".img");
-const contenedorDatos = document.querySelector(".elementos");
+let busqueda = document.querySelector("input");
+let bbusqueda = document.querySelector("button");
+let nbusqueda = document.querySelector("#nombre");
 
-let listaPokemon = [];
+let nbbusqueda = document.querySelector("#bnombre");
+let valor = 0;
+let descripcion = ``;
 
+let valorT = "";
+let body = document.querySelector(".img");
+let audio = document.createElement("audio");
+let audio2 = document.createElement("audio");
+let voz;
 fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then(respuesta => respuesta.json())
     .then(datos => {
-        listaPokemon = datos.results;
+        
+        console.log(datos)
+    bbusqueda.addEventListener("click",()=>{
+    
+   
     })
-    .catch(error => {
-        contenedorDatos.innerHTML = "<p>Error al cargar los Pokémon.</p>";
-        console.log(error);
+    nbbusqueda.addEventListener("click",()=>{
+        valor = Number(document.querySelector("#text").value);
+        valorT = nbusqueda.value
+      console.log(typeof valor)
+      console.log(valor)
+        for(let i = 0 ; i < datos.results.length  ; i++){
+            if(valorT === datos.results[i].name || valor === i+1)
+            {
+                
+                fetch(`https://pokeapi.co/api/v2/pokemon/${i+1}`)
+                .then(respuesta2 => respuesta2.json() )
+                .then(datos2 =>{
+                    
+                    console.log(datos2)
+                    audio.src = `${datos2.cries['legacy']}`
+                  
+                    console.log(datos2)
+                    body.innerHTML = `
+                    <div class="img">
+                        <h1>${datos2.name}</h1><br>
+                        <div style="text-align:center">Numero de pokemon: ${datos2.id} </div> <br>
+                        <div style="text-align:center">Tipo de pokemon: ${datos2.types[0].type.name} </div>
+                        <img src="${datos2.sprites.versions['generation-v'].icons.animated.front_default}" alt="${datos2.sprites.versions['generation-v'].icons.animated.front_default}">
+                        <audio src="${audio}"></audio>
+                    </div>`; 
+                    audio.play();
+               
+                    console.log(datos2)
+                })
+            }
+        }
+    })
+
     });
 
-function mostrarPokemon(datos) {
-    contenedorImagen.innerHTML = `
-        <img src="${datos.sprites.front_default}" alt="${datos.name}">
-    `;
 
-    const tipos = datos.types.map(tipo => tipo.type.name).join(" / ");
-
-    contenedorDatos.innerHTML = `
-        <h2>${datos.name}</h2>
-        <p>N° ${datos.id}</p>
-        <p>Tipo: ${tipos}</p>
-    `;
-}
-
-function buscarPokemon(busqueda) {
-    busqueda = busqueda.trim().toLowerCase();
-
-    if (busqueda === "") {
-        contenedorImagen.innerHTML = "";
-        contenedorDatos.innerHTML = "<p>Escribí un nombre o un número.</p>";
-        return;
-    }
-
-    if (listaPokemon.length === 0) {
-        contenedorDatos.innerHTML = "<p>La lista se está cargando. Intentá de nuevo.</p>";
-        return;
-    }
-
-    let pokemon;
-
-    if (/^\d+$/.test(busqueda)) {
-        pokemon = listaPokemon[Number(busqueda) - 1];
-    } else {
-        pokemon = listaPokemon.find(elemento => elemento.name === busqueda);
-    }
-
-    if (!pokemon) {
-        contenedorImagen.innerHTML = "";
-        contenedorDatos.innerHTML = "<p>No se encontró ese Pokémon entre los primeros 151.</p>";
-        return;
-    }
-
-    fetch(pokemon.url)
-        .then(respuesta => respuesta.json())
-        .then(datos => {
-            mostrarPokemon(datos);
-        })
-        .catch(error => {
-            contenedorImagen.innerHTML = "";
-            contenedorDatos.innerHTML = "<p>No se pudo consultar ese Pokémon.</p>";
-            console.log(error);
-        });
-}
-
-botonBuscar.addEventListener("click", () => {
-    buscarPokemon(inputNombre.value || inputNumero.value);
-});
-
-inputNombre.addEventListener("keydown", evento => {
-    if (evento.key === "Enter") {
-        buscarPokemon(inputNombre.value);
-    }
-});
-
-inputNumero.addEventListener("keydown", evento => {
-    if (evento.key === "Enter") {
-        buscarPokemon(inputNumero.value);
-    }
-});
-
-inputNombre.addEventListener("input", () => {
-    inputNumero.value = "";
-});
-
-inputNumero.addEventListener("input", () => {
-    inputNombre.value = "";
-});
