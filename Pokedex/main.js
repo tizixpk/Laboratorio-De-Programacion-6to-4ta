@@ -1,4 +1,3 @@
-// Seleccionamos los elementos del HTML.
 const inputNombre = document.getElementById("nombre");
 const inputNumero = document.getElementById("text");
 const botonBuscar = document.getElementById("bnombre");
@@ -7,8 +6,6 @@ const contenedorDatos = document.querySelector(".elementos");
 
 let listaPokemon = [];
 
-// Obtenemos la lista de los primeros 151 Pokémon con fetch(),
-// tal como aparece en la actividad.
 fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then(respuesta => respuesta.json())
     .then(datos => {
@@ -19,7 +16,6 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
         console.log(error);
     });
 
-// Mostramos la imagen, el nombre, el número y los tipos.
 function mostrarPokemon(datos) {
     contenedorImagen.innerHTML = `
         <img src="${datos.sprites.front_default}" alt="${datos.name}">
@@ -34,7 +30,6 @@ function mostrarPokemon(datos) {
     `;
 }
 
-// Buscamos por nombre o por número dentro de los primeros 151 Pokémon.
 function buscarPokemon(busqueda) {
     busqueda = busqueda.trim().toLowerCase();
 
@@ -63,7 +58,6 @@ function buscarPokemon(busqueda) {
         return;
     }
 
-    // Hacemos otra consulta para obtener la imagen, el número y los tipos.
     fetch(pokemon.url)
         .then(respuesta => respuesta.json())
         .then(datos => {
@@ -76,12 +70,10 @@ function buscarPokemon(busqueda) {
         });
 }
 
-// El botón permite buscar usando cualquiera de los dos campos.
 botonBuscar.addEventListener("click", () => {
     buscarPokemon(inputNombre.value || inputNumero.value);
 });
 
-// También se puede buscar presionando Enter.
 inputNombre.addEventListener("keydown", evento => {
     if (evento.key === "Enter") {
         buscarPokemon(inputNombre.value);
@@ -94,7 +86,6 @@ inputNumero.addEventListener("keydown", evento => {
     }
 });
 
-// Al escribir en un campo, limpiamos el otro para evitar confusiones.
 inputNombre.addEventListener("input", () => {
     inputNumero.value = "";
 });
