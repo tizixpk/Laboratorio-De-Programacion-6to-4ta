@@ -1,58 +1,52 @@
-let busqueda = document.querySelector("input");
-let bbusqueda = document.querySelector("button");
-let nbusqueda = document.querySelector("#nombre");
+let buscador = document.querySelector("input");
+let botonBuscar = document.querySelector("button");
+let nombrePokemon = document.querySelector("#nombre");
 
-let nbbusqueda = document.querySelector("#bnombre");
-let valor = 0;
-let descripcion = ``;
+let botonNombre = document.querySelector("#bnombre");
+let numeroPokemon = 0;
+let descripcionPokemon = ``;
 
-let valorT = "";
-let body = document.querySelector(".img");
-let audio = document.createElement("audio");
-let audio2 = document.createElement("audio");
-let voz;
+let textoPokemon = "";
+let contenedor = document.querySelector(".img");
+
 fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
-    .then(respuesta => respuesta.json())
-    .then(datos => {
-        
-        console.log(datos)
-    bbusqueda.addEventListener("click",()=>{
-    
-   
-    })
-    nbbusqueda.addEventListener("click",()=>{
-        valor = Number(document.querySelector("#text").value);
-        valorT = nbusqueda.value
-      console.log(typeof valor)
-      console.log(valor)
-        for(let i = 0 ; i < datos.results.length  ; i++){
-            if(valorT === datos.results[i].name || valor === i+1)
-            {
-                
-                fetch(`https://pokeapi.co/api/v2/pokemon/${i+1}`)
-                .then(respuesta2 => respuesta2.json() )
-                .then(datos2 =>{
-                    
-                    console.log(datos2)
-                    audio.src = `${datos2.cries['legacy']}`
-                  
-                    console.log(datos2)
-                    body.innerHTML = `
-                    <div class="img">
-                        <h1>${datos2.name}</h1><br>
-                        <div style="text-align:center">Numero de pokemon: ${datos2.id} </div> <br>
-                        <div style="text-align:center">Tipo de pokemon: ${datos2.types[0].type.name} </div>
-                        <img src="${datos2.sprites.versions['generation-v'].icons.animated.front_default}" alt="${datos2.sprites.versions['generation-v'].icons.animated.front_default}">
-                        <audio src="${audio}"></audio>
-                    </div>`; 
-                    audio.play();
-               
-                    console.log(datos2)
-                })
+    .then(res => res.json())
+    .then(listaPokemon => {
+
+        console.log(listaPokemon);
+
+        botonBuscar.addEventListener("click", () => {
+
+        });
+
+        botonNombre.addEventListener("click", () => {
+            numeroPokemon = Number(document.querySelector("#text").value);
+            textoPokemon = nombrePokemon.value;
+
+            console.log(typeof numeroPokemon);
+            console.log(numeroPokemon);
+
+            for (let posicion = 0; posicion < listaPokemon.results.length; posicion++) {
+
+                if (textoPokemon === listaPokemon.results[posicion].name || numeroPokemon === posicion + 1) {
+
+                    fetch(`https://pokeapi.co/api/v2/pokemon/${posicion + 1}`)
+                        .then(resPokemon => resPokemon.json())
+                        .then(infoPokemon => {
+
+                            console.log(infoPokemon);
+
+                            contenedor.innerHTML = `
+                            <div class="img">
+                                <h1>${infoPokemon.name}</h1><br>
+                                <div style="text-align:center">Numero de pokemon: ${infoPokemon.id}</div><br>
+                                <div style="text-align:center">Tipo de pokemon: ${infoPokemon.types[0].type.name}</div>
+                                <img src="${infoPokemon.sprites.versions['generation-v'].icons.animated.front_default}" alt="${infoPokemon.name}">
+                            </div>`;
+
+                            console.log(infoPokemon);
+                        });
+                }
             }
-        }
-    })
-
+        });
     });
-
-
