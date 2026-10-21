@@ -2,7 +2,6 @@ const botonNombre = document.getElementById("bnombre");
 const elemento = document.getElementById("bb");
 let audio = document.createElement("audio");
 let audio2 = document.createElement("audio");
-let voz;
 function buscarPokemon(busqueda) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${busqueda}`)
         .then(respuesta => {
